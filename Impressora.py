@@ -1,7 +1,6 @@
 import os, sys
 import pyautogui as pag
 import time
-import mouseinfo
 
 def Compartilhar_Impressora():
     epson_compartilhar = ('wmic printer where name="EPSON TM-T20X Receipt" set shared=TRUE , sharename = "EPSON"')
