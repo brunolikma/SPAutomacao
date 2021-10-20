@@ -1,20 +1,12 @@
-import os, sys
+import os
 import pyautogui as pag
 import time
 
-def Compartilhar_Impressora():
-        epson_compartilhar = ('wmic printer where name="EPSON TM-T20X Receipt" set shared=TRUE , sharename = "EPSON"')
-        os.popen(epson_compartilhar)
-        epson_compartilhar = ('wmic printer where name="EPSON TM-T20 Receipt" set shared=TRUE , sharename = "EPSON"')
-        os.popen(epson_compartilhar)
+def Instalação():
+    instalar_impressoraT20 = ("call C:\SP_IMPLANTACAO\Driver_T20\APD_510_T20.exe")
+    os.system(instalar_impressoraT20)
 
 def Inicio_Instalacao():
-
-    while True:
-         instalar_impressoraT20 = ("C:\SP_IMPLANTACAO\Driver_T20\APD_510_T20.exe")
-         os.system(instalar_impressoraT20)
-         break
-
     while True:
         if pag.locateOnScreen('verificacao.png', confidence=0.9) or pag.locateOnScreen('verificacao2.png', confidence=0.9)\
         or pag.locateOnScreen('verificacao3.png', confidence=0.9):
@@ -56,5 +48,3 @@ def Inicio_Instalacao():
             break
         else:
             print("Ainda nao localizei o Botao Next")
-
-Inicio_Instalacao()
